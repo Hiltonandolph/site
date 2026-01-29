@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME CLOTHING BRAND LLC | Exclusive Women's Apparel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-black: #1a1a1a;
+            --brand-gold: #c5a059;
+            --brand-beige: #f5f5f0;
+            --white: #ffffff;
+            --text-gray: #4a4a4a;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: var(--brand-black); background: var(--white); overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+
+        /* 1. HERO SECTION */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80&w=2000') no-repeat center center/cover;
+            color: var(--white); 
+            text-align: center;
+        }
+        .hero-inner { width: 100%; }
+        .hero h1 { font-size: clamp(3rem, 10vw, 5.5rem); margin-bottom: 20px; letter-spacing: -2px; }
+        .hero p { font-size: 1.2rem; letter-spacing: 5px; font-weight: 300; text-transform: uppercase; color: var(--brand-gold); }
+
+        /* SECTION UTILS */
+        section { padding: 100px 0; }
+        .tagline { color: var(--brand-gold); font-weight: 700; font-size: 0.85rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 15px; display: block; text-align: center; }
+        .section-title { font-size: 2.8rem; text-align: center; margin-bottom: 60px; line-height: 1.2; }
+
+        /* 2. ABOUT US (FLORIDA LUXURY) */
+        .about-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .about-text p { font-size: 1.1rem; color: var(--text-gray); margin-bottom: 25px; }
+
+        /* 3. COLLECTIONS (RETAIL SECTORS) */
+        .collections { background: var(--brand-beige); }
+        .col-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .col-card { padding: 40px; background: var(--white); border-bottom: 4px solid transparent; transition: var(--transition); text-align: center; }
+        .col-card:hover { transform: translateY(-10px); border-bottom-color: var(--brand-gold); }
+        .col-card h3 { margin-bottom: 15px; font-size: 1.5rem; color: var(--brand-black); }
+
+        /* 4. BRAND EDGE (WHY US) */
+        .edge-block { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; text-align: center; }
+        .edge-item h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--brand-black); }
+        .edge-item p { font-size: 0.95rem; color: var(--text-gray); }
+
+        /* 5. PROCESS (QUALITY STANDARDS) */
+        .process { background: var(--brand-black); color: var(--white); }
+        .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 60px; text-align: center; }
+        .step-num { font-family: 'Libre Baskerville'; font-size: 4rem; color: var(--brand-gold); opacity: 0.5; display: block; margin-bottom: 10px; }
+        .step h3 { margin-bottom: 15px; font-size: 1.4rem; }
+        .step p { opacity: 0.8; font-weight: 300; font-size: 0.95rem; }
+
+        /* 6. CONTACT FORM */
+        .contact-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-weight: 700; font-size: 0.75rem; margin-bottom: 10px; text-transform: uppercase; color: var(--brand-black); }
+        .form-control { width: 100%; padding: 15px; border: 1px solid #ddd; background: #fafafa; font-family: inherit; transition: var(--transition); }
+        .form-control:focus { border-color: var(--brand-gold); outline: none; background: #fff; }
+        .submit-btn { padding: 20px 50px; background: var(--brand-black); color: white; border: none; font-weight: 700; cursor: pointer; transition: var(--transition); width: 100%; text-transform: uppercase; letter-spacing: 3px; }
+        .submit-btn:hover { background: var(--brand-gold); }
+
+        /* 7. FOOTER */
+        footer { padding: 80px 0; background: #0a0a0a; color: #888; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px; }
+        .footer-brand h2 { color: var(--white); font-size: 2.2rem; margin-bottom: 15px; }
+        .footer-info p { margin-bottom: 10px; font-size: 0.95rem; }
+        .footer-info strong { color: var(--brand-gold); text-transform: uppercase; font-size: 0.75rem; display: block; margin-bottom: 5px; letter-spacing: 1px; }
+        .copyright { margin-top: 60px; text-align: center; font-size: 0.75rem; border-top: 1px solid #1a1a1a; padding-top: 35px; }
+
+        @media (max-width: 992px) {
+            .about-wrap, .edge-block, .process-grid, .contact-wrap, .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-inner container">
+            <h1>Redefining Elegance</h1>
+            <p>Game Clothing Brand LLC | Premier Women's Ready-to-Wear</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="about-wrap">
+                <div class="about-text">
+                    <span class="tagline">Our Heritage</span>
+                    <h2 class="section-title" style="text-align: left;">Lakeland's Signature in Women's Fashion</h2>
+                    <p>Based in the sophisticated landscape of Lakeland, Florida, Game Clothing Brand LLC is a premier destination in the Retail Trade sector. Under the strategic direction of Key Principal Hilton Randolph, we specialize in curated, high-quality ready-to-wear apparel for the modern woman.</p>
+                    <p>Our flagship operations at 1268 Pintail Pl define the intersection of timeless Florida luxury and contemporary design. We believe that fashion is a form of expression, and our collections are meticulously selected to empower and inspire.</p>
+                    <p>As a leading representative of the Retail Trade sector, we maintain a commitment to excellence in service and product integrity that sets us apart in the Lakeland community.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&q=80&w=1000" alt="Boutique Interior" style="width:100%; border-radius: 4px; box-shadow: 20px 20px 0 var(--brand-gold);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="collections">
+        <div class="container">
+            <span class="tagline">The Gallery</span>
+            <h2 class="section-title">Specialty Retail Offerings</h2>
+            <div class="col-grid">
+                <div class="col-card">
+                    <h3>Ready-to-Wear</h3>
+                    <p>Our core specialty: meticulously tailored women's apparel designed for versatility and effortless style.</p>
+                </div>
+                <div class="col-card">
+                    <h3>Accessories & Jewelry</h3>
+                    <p>Curated accents that complete the silhouette, sourced with an eye for craftsmanship and luxury within the retail sector.</p>
+                </div>
+                <div class="col-card">
+                    <h3>Footwear Selection</h3>
+                    <p>From essential classics to statement pieces, our footwear range embodies the high standards of the Shoe Retail industry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <span class="tagline">The Distinction</span>
+            <h2 class="section-title">The Game Clothing Standard</h2>
+            <div class="edge-block">
+                <div class="edge-item">
+                    <h3>Lakeland Strategic Hub</h3>
+                    <p>Our headquarters at 1268 Pintail Pl provides a central anchor for premium retail distribution across Florida.</p>
+                </div>
+                <div class="edge-item">
+                    <h3>Randolph-Led Integrity</h3>
+                    <p>Hilton Randolph personally oversees our operational standards, ensuring every client experience reflects our core brand values.</p>
+                </div>
+                <div class="edge-item">
+                    <h3>Retail Mastery</h3>
+                    <p>As a specialized Women's Apparel Retailer, we offer a level of expertise and curation that exceeds general department store standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <span class="tagline" style="color: var(--brand-gold);">Quality Commitment</span>
+            <h2 class="section-title" style="color: white;">Our Curated Protocol</h2>
+            <div class="process-grid">
+                <div class="step">
+                    <span class="step-num">01</span>
+                    <h3>Material Audit</h3>
+                    <p>We source textiles that meet rigorous benchmarks for comfort, durability, and aesthetic excellence.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">02</span>
+                    <h3>Design Validation</h3>
+                    <p>Every ready-to-wear piece is evaluated for fit and silhouette integrity to ensure the highest retail standard.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">03</span>
+                    <h3>Client Concierge</h3>
+                    <p>Our Lakeland-based team provides expert styling and fulfillment services to ensure absolute satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="contact-wrap">
+                <div>
+                    <span class="tagline">Inquiry</span>
+                    <h2 class="section-title" style="text-align: left;">Connect With Our Studio</h2>
+                    <p>Reach out to our Lakeland, FL headquarters for wholesale inquiries, private styling appointments, or retail partnership opportunities.</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label>FULL NAME</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label>BUSINESS EMAIL</label>
+                            <input type="email" class="form-control" placeholder="info@gameclothingbrand.pro">
+                        </div>
+                        <div class="form-group">
+                            <label>ENQUIRY BRIEF</label>
+                            <textarea class="form-control" rows="5" placeholder="How can our fashion house assist you?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Execute Link</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>GAME CLOTHING</h2>
+                    <p>Ready-to-Wear Excellence. Lakeland Reliability.</p>
+                </div>
+                <div class="footer-info">
+                    <p><strong>Florida Headquarters:</strong> 1268 Pintail Pl, Lakeland, FL, 33813-2976 United States</p>
+                    <p><strong>Digital Inquiries:</strong> info@gameclothingbrand.pro</p>
+                    <p><strong>Support:</strong> info@gameclothingbrand.pro</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Game Clothing Brand LLC. All Rights Reserved. Principal: Hilton Randolph.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
